@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_welcome">
+
+    <fragment
+        android:id="@+id/nav_welcome"
+        android:name="com.example.covid.ui.welcome.WelcomeFragment"
+        android:label="@string/menu_welcome"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_nav_home_to_nav_gallery"
+            app:destination="@id/nav_casos" />
+        <action
+            android:id="@+id/action_nav_welcome_to_nav_mortes"
+            app:destination="@id/nav_mortes" />
+        <action
+            android:id="@+id/action_nav_welcome_to_nav_testes"
+            app:destination="@id/nav_testes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_casos"
+        android:name="com.example.covid.ui.casos.CasosFragment"
+        android:label="@string/menu_casos"
+        tools:layout="@layout/fragment_casos"/>
+
+    <fragment
+        android:id="@+id/nav_mortes"
+        android:name="com.example.covid.ui.mortes.MortesFragment"
+        android:label="@string/menu_mortes"
+        tools:layout="@layout/fragment_mortes" />
+
+    <fragment
+        android:id="@+id/nav_testes"
+        android:name="com.example.covid.ui.testes.TestesFragment"
+        android:label="@string/menu_testes"
+        tools:layout="@layout/fragment_testes" />
+</navigation>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Covid</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">J. Daniel Medeiros</string>
+    <string name="nav_header_subtitle">jdmedeiros@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_casos">Casos</string>
+    <string name="menu_mortes">Mortes</string>
+    <string name="menu_testes">Testes</string>
+
+    <string name="home_second">Home Second</string>
+
+    <string name="pick_country">Escolher País</string>
+    <string name="novos">Novos</string>
+    <string name="ativos">Ativos</string>
+    <string name="criticos">Criticos</string>
+    <string name="recuperados">Recuperados</string>
+    <string name="total">Total</string>
+    <string name="menu_welcome">Welcome</string>
+    <string name="data">Data</string>
+    <string name="hora">Hora</string>
+    <string name="welcome_msg">Welcome to the Corona virus Android experiment.\nThe data shown is being pulled from the the Covid-19 API https://rapidapi.com/api-sports/api/covid-193. The entire project is available here https://github.com/jdmedeiros/Covid</string>
+    <string name="hello">Hello</string>
+    <string name="experiment">Welcome to the Android Covid experiment!</string>
+    <string name="basedon">Data is pulled from the Covid-19 API</string>
+    <string name="basedurl">https://rapidapi.com/api-sports/api/covid-193</string>
+    <string name="availat">Source: https://github.com/jdmedeiros/Covid</string>
+
+</resources>
