@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.covid.OkHttpHandler.dadosCovid;
+import static com.example.covid.MainActivity.paisSelecionado;
 
 public class CasosFragment extends Fragment {
 
@@ -30,8 +31,6 @@ public class CasosFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
-
 
 
         casosViewModel =
@@ -47,11 +46,12 @@ public class CasosFragment extends Fragment {
         TextView casosData = root.findViewById(R.id.casosData);
         TextView casosHora = root.findViewById(R.id.casosHora);
         Spinner spinnerC = root.findViewById(R.id.spinnerCasos);
-
+        spinnerC.setSelection(paisSelecionado);
         spinnerC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-               casosNovos.setText(dadosCovid.get(parent.getSelectedItemPosition()).getCases().getNew());
+                paisSelecionado = parent.getSelectedItemPosition();
+                casosNovos.setText(dadosCovid.get(parent.getSelectedItemPosition()).getCases().getNew());
                 casosAtivos.setText(String.valueOf(dadosCovid.get(parent.getSelectedItemPosition()).getCases().getActive()));
                 casosCriticos.setText(String.valueOf(dadosCovid.get(parent.getSelectedItemPosition()).getCases().getCritical()));
                 casosRecuperados.setText(String.valueOf(dadosCovid.get(parent.getSelectedItemPosition()).getCases().getRecovered()));
@@ -59,12 +59,11 @@ public class CasosFragment extends Fragment {
                 casosData.setText(dadosCovid.get(parent.getSelectedItemPosition()).getDay());
                 casosHora.setText(dadosCovid.get(parent.getSelectedItemPosition()).getTime().substring(11));
             }
+
             @Override
-            public void onNothingSelected(AdapterView <?> parent) {
+            public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
-
 
 
         casosViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {

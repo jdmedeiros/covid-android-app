@@ -21,6 +21,7 @@ import com.example.covid.Resposta;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.covid.MainActivity.paisSelecionado;
 import static com.example.covid.OkHttpHandler.dadosCovid;
 
 public class TestesFragment extends Fragment {
@@ -39,10 +40,12 @@ public class TestesFragment extends Fragment {
         TextView testesData = root.findViewById(R.id.testesData);
         TextView testesHora = root.findViewById(R.id.testesHora);
         Spinner spinnerC = root.findViewById(R.id.spinnerTestes);
+        spinnerC.setSelection(paisSelecionado);
 
         spinnerC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                paisSelecionado = parent.getSelectedItemPosition();
                 testesTotal.setText(String.valueOf(dadosCovid.get(parent.getSelectedItemPosition()).getTests().getTotal()));
                 testesData.setText(dadosCovid.get(parent.getSelectedItemPosition()).getDay());
                 testesHora.setText(dadosCovid.get(parent.getSelectedItemPosition()).getTime().substring(11));

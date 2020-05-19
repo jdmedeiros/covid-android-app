@@ -21,7 +21,7 @@ public class MainActivity<HttpHeader> extends AppCompatActivity {
 
 
     private AppBarConfiguration mAppBarConfiguration;
-
+    public static int paisSelecionado = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
