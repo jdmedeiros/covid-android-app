@@ -46,7 +46,6 @@ public class CasosFragment extends Fragment {
         TextView casosData = root.findViewById(R.id.casosData);
         TextView casosHora = root.findViewById(R.id.casosHora);
         Spinner spinnerC = root.findViewById(R.id.spinnerCasos);
-        spinnerC.setSelection(paisSelecionado);
         spinnerC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -86,6 +85,7 @@ public class CasosFragment extends Fragment {
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, countries);
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinnerC.setAdapter(arrayAdapter);
+                spinnerC.setSelection(paisSelecionado);
             }
         });
 

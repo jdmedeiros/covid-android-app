@@ -41,7 +41,6 @@ public class MortesFragment extends Fragment {
         TextView mortesData = root.findViewById(R.id.mortesData);
         TextView mortesHora = root.findViewById(R.id.mortesHora);
         Spinner spinnerC = root.findViewById(R.id.spinnerMortes);
-        spinnerC.setSelection(paisSelecionado);
 
         spinnerC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -79,6 +78,7 @@ public class MortesFragment extends Fragment {
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, countries);
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinnerC.setAdapter(arrayAdapter);
+                spinnerC.setSelection(paisSelecionado);
             }
         });
         return root;
